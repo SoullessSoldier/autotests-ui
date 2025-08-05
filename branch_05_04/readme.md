@@ -2,7 +2,26 @@
 [назад](../readme.md)
 
 Файлы ./src/5_4_*.py - разбор теории  
-Файл ./src/playwright_registration.py - задание модуля теории.  
+Файл ./src/playwright_registration.py - задание модуля теории.
+
+Запуск докера с собранным заранее образом Playwright в Windows Powershell
+```cmd
+.\src\run_pw_image.cmd
+```
+
+Запуск в Git Bash
+```sh
+source ./run_pw_image.sh
+```
+
+откроется контейнер с командной строкой bash
+
+далее запуск теста:
+```sh
+python3 /opt/src/playwright_registration.py
+```
+
+Если всё корректно, то скрипт завершится со строкой OK, иначе вывалится с исключением.
 
 В данном задании вам необходимо самостоятельно написать скрипт, который выполнит следующие действия:
 
