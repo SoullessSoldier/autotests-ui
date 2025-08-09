@@ -15,4 +15,4 @@
 Содержание:
 - [branch_05_04 - Модуль 5.4 "Введение в Playwright"](./branch_05_04/readme.md)
 - [branch_05_05 - Модуль 5.5 "Углубление в Playwright"](./branch_05_05/readme.md)
-  
+- [branch_05_06 - Модуль 5.6 "Работа с авторизацией в Playwright"](./branch_05_06/readme.md)
