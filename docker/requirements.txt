@@ -1,0 +1,10 @@
+playwright==1.53.0
+pytest==8.4.1
+allure-pytest==2.15.0
+allure-python-commons==2.15.0
+flake8
+flake8-import-order
+flake8-quotes
+flake8-builtins
+flake8-docstrings
+isort

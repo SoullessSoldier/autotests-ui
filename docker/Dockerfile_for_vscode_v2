@@ -1,0 +1,60 @@
+# Stage 1: Building Dependencies
+FROM  192.168.1.103:8344/python:3.12-bookworm
+
+ENV PLAYWRIGHT_BROWSERS_PATH=/tmp/pw-browsers
+
+# Keep the basic Debian repository intact while blocking future updates
+RUN echo "deb http://deb.debian.org/debian bookworm main" > /etc/apt/sources.list && \
+    rm -f /etc/apt/sources.list.d/debian.sources && \
+    echo "Package: *\nPin: release o=Debian\nPin-Priority: 1001" > /etc/apt/preferences.d/hold-all
+
+# Install minimal dependencies
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    curl wget gnupg ca-certificates libnss3-dev libx11-data xz-utils fontconfig locales sudo openssh-server libxcb1 && \
+    locale-gen en_US.UTF-8 && \
+    dpkg-reconfigure locales && \
+    apt-get autoremove -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+
+# Install Python dependencies via your internal Nexus
+COPY requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir --upgrade -r /tmp/requirements.txt && \
+    playwright install --with-deps && \
+    rm -rf ~/.cache/pip
+
+
+# Generate SSH host keys
+RUN ssh-keygen -A
+
+# Add a new user for security purposes
+ARG USERNAME=vscode
+ARG UID=1000
+ARG GID=1000
+RUN groupadd --gid ${GID} ${USERNAME} && \
+    useradd --uid ${UID} --gid ${GID} --shell /bin/bash --create-home ${USERNAME} && \
+    echo "${USERNAME}:password" | chpasswd && \
+    adduser ${USERNAME} sudo && \
+    mkdir -p /etc/sudoers.d && \
+    echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/vscode && \
+    chmod 0440 /etc/sudoers.d/vscode
+
+# Create a working directory where source files will be mounted
+WORKDIR /home/${USERNAME}/workspace
+RUN chown -R ${USERNAME}:${USERNAME} .
+VOLUME ["/home/${USERNAME}/workspace"]
+COPY .flake8 /home/${USERNAME}/
+COPY pytest.ini /home/${USERNAME}/
+RUN echo export PLAYWRIGHT_BROWSERS_PATH=/tmp/pw-browsers >>/home/${USERNAME}/.bashrc
+
+
+# Expose SSH port
+EXPOSE 22
+
+# Make sure /run/sshd exists
+RUN mkdir -p /run/sshd && chown root:root /run/sshd && chmod 755 /run/sshd
+
+# Default entry point
+CMD ["/usr/sbin/sshd", "-D"]
