@@ -17,5 +17,6 @@
 - [branch_05_05 - Модуль 5.5 "Углубление в Playwright"](./branch_05_05/readme.md)
 - [branch_05_06 - Модуль 5.6 "Работа с авторизацией в Playwright"](./branch_05_06/readme.md)
 - [branch_06_02 - Модуль 6.2 "Интеграция Pytest и Playwright"](./branch_06_02/readme.md)
+- [branch_06_03 - Модуль 6.3 "Маркировки Pytest"](./branch_06_03/readme.md)
 
 - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
