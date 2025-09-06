@@ -1,9 +1,9 @@
 # 6.4 Pytest skip, skipif, xfail
 [назад](../readme.md)
 
-- Встроенная pytest маркировка skip
-- Встроенная pytest маркировка skipif
-- Встроенная pytest маркировка xfail
+- Встроенная pytest маркировка skip ./tests/test_pytest_skip.py
+- Встроенная pytest маркировка skipif ./tests/test_pytest_skipif.py
+- Встроенная pytest маркировка xfail  ./tests/test_pytest_xfail.py
 
 
 Ссылки:
