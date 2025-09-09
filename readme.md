@@ -22,5 +22,6 @@
 - [branch_06_05 - Модуль 6.5 "Фикстуры Pytest"](./branch_06_05/readme.md)
 - [branch_06_06 - Модуль 6.6 "Плагины Pytest"](./branch_06_06/readme.md)
 - [branch_06_07 - Модуль 6.7 "Параметризация Pytest"](./branch_06_07/readme.md)
+- [branch_06_08 - Модуль 6.8 "Перезапуски автотестов в Pytest"](./branch_06_08/readme.md)
 
 - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
