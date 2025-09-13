@@ -10,18 +10,26 @@
 - Начиная с модуля 6.5 тесты размещены в каталоге tests корневого каталога проекта,  
 в каталогах веток модлей размещены учебные файлы кода  
 - Начиная с модуля 6.6 фикстуры размещены в каталоге fixtures корневого каталога проекта,  
-также в корне проекта размещен файл conftest.py, подключающий фикстуры как плагины. 
+также в корне проекта размещен файл conftest.py, подключающий фикстуры как плагины.
+- Начиная с модуля 7.1 докер-контейнер запускается скриптом run_pw2_v2.sh из папки docker с 
+подключением родительской папки проекта как volume;  
+изменения в тестах вносятся в папках  
+*fixtures*, *pages*, *tests*, файлах *conftest.py*, *pytest.ini*
 
-Содержание:
-- [branch_05_04 - Модуль 5.4 "Введение в Playwright"](./branch_05_04/readme.md)
-- [branch_05_05 - Модуль 5.5 "Углубление в Playwright"](./branch_05_05/readme.md)
-- [branch_05_06 - Модуль 5.6 "Работа с авторизацией в Playwright"](./branch_05_06/readme.md)
-- [branch_06_02 - Модуль 6.2 "Интеграция Pytest и Playwright"](./branch_06_02/readme.md)
-- [branch_06_03 - Модуль 6.3 "Маркировки Pytest"](./branch_06_03/readme.md)
-- [branch_06_04 - Модуль 6.4 "Pytest skip, skipif, xfail"](./branch_06_04/readme.md)
-- [branch_06_05 - Модуль 6.5 "Фикстуры Pytest"](./branch_06_05/readme.md)
-- [branch_06_06 - Модуль 6.6 "Плагины Pytest"](./branch_06_06/readme.md)
-- [branch_06_07 - Модуль 6.7 "Параметризация Pytest"](./branch_06_07/readme.md)
-- [branch_06_08 - Модуль 6.8 "Перезапуски автотестов в Pytest"](./branch_06_08/readme.md)
-
-- [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
+Содержание:  
+- **5. Основы автоматизации с Playwright**  
+  - [branch_05_04 - Модуль 5.4 "Введение в Playwright"](./branch_05_04/readme.md)
+  - [branch_05_05 - Модуль 5.5 "Углубление в Playwright"](./branch_05_05/readme.md)
+  - [branch_05_06 - Модуль 5.6 "Работа с авторизацией в Playwright"](./branch_05_06/readme.md)  
+- **6. Управление автотестами с Pytest**  
+  - [branch_06_02 - Модуль 6.2 "Интеграция Pytest и Playwright"](./branch_06_02/readme.md)
+  - [branch_06_03 - Модуль 6.3 "Маркировки Pytest"](./branch_06_03/readme.md)
+  - [branch_06_04 - Модуль 6.4 "Pytest skip, skipif, xfail"](./branch_06_04/readme.md)
+  - [branch_06_05 - Модуль 6.5 "Фикстуры Pytest"](./branch_06_05/readme.md)
+  - [branch_06_06 - Модуль 6.6 "Плагины Pytest"](./branch_06_06/readme.md)
+  - [branch_06_07 - Модуль 6.7 "Параметризация Pytest"](./branch_06_07/readme.md)
+  - [branch_06_08 - Модуль 6.8 "Перезапуски автотестов в Pytest"](./branch_06_08/readme.md)  
+- **7. Паттерны автоматизации тестирования UI**  
+  - [branch_07_01 - Модуль 7.1 "Знакомство с PageObject"](./branch_07_01/readme.md)
+- **Служебное**
+  - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)

@@ -2,11 +2,13 @@ import pytest
 # import sys
 
 
-# @pytest.mark.skipif(sys.version_info < (3, 8), reason="Требуется Python 3.8 или выше")
+# @pytest.mark.skipif(sys.version_info < (3, 8),
+#                     reason="Требуется Python 3.8 или выше")
 # def test_python_version():
 #     pass
 
 SYSTEM_VERSION = 'v1.2.0'
+
 
 @pytest.mark.skipif(
     SYSTEM_VERSION == 'v1.3.0',

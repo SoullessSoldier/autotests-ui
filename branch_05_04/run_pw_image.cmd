@@ -1,1 +1,0 @@
-docker run --rm -it -v ./src:/opt/src playwright-python bash
