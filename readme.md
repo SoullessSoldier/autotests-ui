@@ -31,5 +31,6 @@
   - [branch_06_08 - Модуль 6.8 "Перезапуски автотестов в Pytest"](./branch_06_08/readme.md)  
 - **7. Паттерны автоматизации тестирования UI**  
   - [branch_07_01 - Модуль 7.1 "Знакомство с PageObject"](./branch_07_01/readme.md)
+  - [branch_07_02 - Модуль 7.2 "Практикуемся в реализации PageObject"](./branch_07_02/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
