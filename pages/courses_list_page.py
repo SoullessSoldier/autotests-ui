@@ -1,6 +1,9 @@
 """Модуль с классом страницы списка курсов."""
 from dataclasses import dataclass
 
+from components.navigation.navbar_component import NavbarComponent
+from components.navigation.sidebar_component import SidebarComponent
+
 from pages.base_page import BasePage
 
 from playwright.sync_api import Page, expect
@@ -23,6 +26,9 @@ class CoursesListPage(BasePage):
     def __init__(self, page: Page):
         """Конструктор класса, принимающий объект Page."""
         super().__init__(page)
+
+        self.navbar = NavbarComponent(page)
+        self.sidebar = SidebarComponent(page)
 
         # Заголовок и кнопка создания курса
         self.courses_title = page.get_by_test_id('courses-list-toolbar-'

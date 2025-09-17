@@ -29,6 +29,12 @@ def dashboard_page(chromium_page: Page) -> DashboardPage:
 
 
 @pytest.fixture
+def dashboard_page_with_state(chromium_page_with_state: Page) -> DashboardPage:
+    """Фикстура инициализированной страницы DashboardPage с состоянием."""
+    return DashboardPage(page=chromium_page_with_state)
+
+
+@pytest.fixture
 def courses_list_page(chromium_page_with_state: Page) -> CoursesListPage:
     """Фикстура инициализированной страницы CoursesListPage."""
     return CoursesListPage(page=chromium_page_with_state)
