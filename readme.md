@@ -33,5 +33,6 @@
   - [branch_07_01 - Модуль 7.1 "Знакомство с PageObject"](./branch_07_01/readme.md)
   - [branch_07_02 - Модуль 7.2 "Практикуемся в реализации PageObject"](./branch_07_02/readme.md)
   - [branch_07_03 - Модуль 7.3 "Знакомство с PageComponent"](./branch_07_03/readme.md)
+  - [branch_07_04 - Модуль 7.4 "Практикуемся в реализации PageComponent"](./branch_07_04/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
