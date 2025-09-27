@@ -34,19 +34,24 @@ class LoginFormComponent(BaseComponent):
         self.password_input.fill(password)
         expect(self.password_input).to_have_value(password)
 
-    def check_visible(self, email: str = '', password: str = ''):
+    def check_visible(self,
+                      email: str | None = None,
+                      password: str | None = None
+                      ):
         """
         Метод для проверки (или проверки заполненной) формы авторизации.
 
-        :param str email = '' : эл.адрес зарегистрированной учетной записи
-        :param str password = '' : пароль зарегистрированной учетной записи
+        :param str | None email:
+        эл.адрес зарегистрированной учетной записи (опционально)
+        :param str | None password:
+        пароль зарегистрированной учетной записи (опционально)
         """
         expect(self.email_input).to_be_visible()
-        if email:
+        if email is not None:
             self.email_input.fill(email)
             expect(self.email_input).to_have_value(email)
 
         expect(self.password_input).to_be_visible()
-        if password:
+        if password is not None:
             self.password_input.fill(password)
             expect(self.password_input).to_have_value(password)

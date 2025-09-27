@@ -42,27 +42,27 @@ class RegistrationFormComponent(BaseComponent):
         expect(self.password_input).to_have_value(password)
 
     def check_visible(self,
-                      email: str = '',
-                      username: str = '',
-                      password: str = ''):
+                      email: str | None = None,
+                      username: str | None = None,
+                      password: str | None = None):
         """
         Метод для проверки (или проверки заполненной) формы регистрации.
 
-        :param str email: эл.адрес новой учетной записи
-        :param str username: эл.адрес новой учетной записи
-        :param str password: пароль новой учетной записи
+        :param str | None email: эл.адрес новой учетной записи (опционально)
+        :param str | None username: эл.адрес новой учетной записи (опционально)
+        :param str | None password: пароль новой учетной записи (опционально)
         """
         expect(self.email_input).to_be_visible()
-        if email:
+        if email is not None:
             self.email_input.fill(email)
             expect(self.email_input).to_have_value(email)
 
         expect(self.username_input).to_be_visible()
-        if username:
+        if username is not None:
             self.username_input.fill(username)
             expect(self.username_input).to_have_value(username)
 
         expect(self.password_input).to_be_visible()
-        if password:
+        if password is not None:
             self.password_input.fill(password)
             expect(self.password_input).to_have_value(password)
