@@ -1,5 +1,7 @@
 """Модуль компонента LoginFormComponent."""
-from components.base_component import BaseComponent, expect
+from components.base_component import BaseComponent
+
+from elements.input import Input
 
 from playwright.sync_api import Page
 
@@ -15,11 +17,9 @@ class LoginFormComponent(BaseComponent):
         """
         super().__init__(page)
 
-        self.email_input = page.get_by_test_id('login-form-email-input')\
-            .locator('input')
+        self.email_input = Input(page, 'login-form-email-input', 'Email')
         self.password_input =\
-            page.get_by_test_id('login-form-password-input')\
-            .locator('input')
+            Input(page, 'login-form-password-input', 'Password')
 
     def fill(self, email: str, password: str):
         """
@@ -29,10 +29,10 @@ class LoginFormComponent(BaseComponent):
         :param str password: пароль зарегистрированной учетной записи
         """
         self.email_input.fill(email)
-        expect(self.email_input).to_have_value(email)
+        self.email_input.check_have_value(email)
 
         self.password_input.fill(password)
-        expect(self.password_input).to_have_value(password)
+        self.password_input.check_have_value(password)
 
     def check_visible(self,
                       email: str | None = None,
@@ -46,12 +46,12 @@ class LoginFormComponent(BaseComponent):
         :param str | None password:
         пароль зарегистрированной учетной записи (опционально)
         """
-        expect(self.email_input).to_be_visible()
+        self.email_input.check_visible()
         if email is not None:
             self.email_input.fill(email)
-            expect(self.email_input).to_have_value(email)
+            self.email_input.check_have_value(email)
 
-        expect(self.password_input).to_be_visible()
+        self.password_input.check_visible()
         if password is not None:
             self.password_input.fill(password)
-            expect(self.password_input).to_have_value(password)
+            self.password_input.check_have_value(password)

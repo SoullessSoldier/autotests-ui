@@ -1,7 +1,13 @@
 """Модуль компонента CreateCourseExerciseFormComponent."""
 from dataclasses import dataclass
 
-from components.base_component import BaseComponent, expect
+from components.base_component import BaseComponent
+
+from elements.button import Button
+from elements.input import Input
+from elements.text import Text
+
+from playwright.sync_api import Page
 
 
 @dataclass
@@ -16,59 +22,71 @@ class CreateCourseExerciseParams:
 class CreateCourseExerciseFormComponent(BaseComponent):
     """Класс компонента CreateCourseExerciseFormComponent."""
 
+    def __init__(self, page: Page):
+        """
+        Конструктор класса компонента CreateCourseExerciseFormComponent.
+
+        :param Page page: объект Page страницы из playwright
+        """
+        super().__init__(page)
+
+        self.delete_exercise_button = Button(
+            page,
+            ('create-course-exercise-{index}-'
+             'box-toolbar-delete-exercise-button'),
+            'Delete exercise'
+        )
+        self.subtitle = Text(
+            page,
+            'create-course-exercise-{index}-box-toolbar-subtitle-text',
+            'Exercise subtitle'
+        )
+        self.title_input = Input(
+            page,
+            'create-course-exercise-form-title-{index}-input',
+            'Title'
+        )
+        self.description_input = Input(
+            page,
+            'create-course-exercise-form-description-{index}-input',
+            'Description'
+        )
+
     def click_delete_button(self, index: int):
         """
         Метод имитирует нажатие на кнопку удаления упражнения.
 
         :param int index - Индекс упражнения в курсе (начиная с 0)
         """
-        delete_button =\
-            self.page.get_by_test_id(f'create-course-exercise-{index}-'
-                                     'box-toolbar-delete-exercise-button')
-        delete_button.click()
+        self.delete_exercise_button.click(index=index)
 
-    def check_visible(self, params: CreateCourseExerciseParams):
+    def check_visible(self, index: int, title: str, description: str):
         """
         Метод для проверки видимости блока создания упражнения.
 
-        :params CreateCourseExerciseParams params: данные в формате структуры
-        датакласса *CreateCourseExerciseParams*
+        :param int index - Индекс упражнения в курсе (начиная с 0)
+        :param str title - Название упражнения
+        :param str description - Описание упражнения
         """
-        subtitle =\
-            self.page.get_by_test_id(f'create-course-exercise-{params.index}-'
-                                     'box-toolbar-subtitle-text')
-        title_input =\
-            self.page.get_by_test_id('create-course-exercise-form-'
-                                     f'title-{params.index}-input')
-        description_input =\
-            self.page.get_by_test_id('create-course-exercise-form-'
-                                     f'description-{params.index}-input')
+        self.subtitle.check_visible()
+        self.subtitle.check_have_text(f'#{index + 1} Exercise', index=index)
 
-        expect(subtitle).to_be_visible()
-        expect(subtitle).to_have_text(f'#{params.index + 1} Exercise')
+        self.title_input.check_visible()
+        self.title_input.check_have_value(title, index=index)
 
-        expect(title_input).to_be_visible()
-        expect(title_input).to_have_value(params.title)
+        self.description_input.check_visible()
+        self.description_input.check_have_value(description, index=index)
 
-        expect(description_input).to_be_visible()
-        expect(description_input).to_have_value(params.description)
-
-    def fill(self, params: CreateCourseExerciseParams):
+    def fill(self, index: int, title: str, description: str):
         """
         Метод для проверки корректности заполнения блока упражнения.
 
-        :params CreateCourseExerciseParams params: данные в формате структуры
-        датакласса *CreateCourseExerciseParams*
+        :param int index - Индекс упражнения в курсе (начиная с 0)
+        :param str title - Название упражнения
+        :param str description - Описание упражнения
         """
-        title_input =\
-            self.page.get_by_test_id('create-course-exercise-form-'
-                                     f'title-{params.index}-input')
-        description_input =\
-            self.page.get_by_test_id('create-course-exercise-form-'
-                                     f'description-{params.index}-input')
+        self.title_input.fill(title, index=index)
+        self.title_input.check_have_value(title, index=index)
 
-        title_input.fill(params.title)
-        expect(title_input).to_have_value(params.title)
-
-        description_input.fill(params.description)
-        expect(description_input).to_have_value(params.description)
+        self.description_input.fill(description, index=index)
+        self.description_input.check_have_value(description, index=index)
