@@ -1,7 +1,9 @@
 """Модуль компонента CourseViewMenuComponent."""
 from components.base_component import BaseComponent
 
-from playwright.sync_api import Page, expect
+from elements.button import Button
+
+from playwright.sync_api import Page
 
 
 class CourseViewMenuComponent(BaseComponent):
@@ -15,11 +17,11 @@ class CourseViewMenuComponent(BaseComponent):
         super().__init__(page)
 
         self.menu_button =\
-            page.get_by_test_id('course-view-menu-button')
+            Button(page, 'course-view-menu-button', 'Menu')
         self.edit_menu_item =\
-            page.get_by_test_id('course-view-edit-menu-item')
+            Button(page, 'course-view-edit-menu-item', 'Edit')
         self.delete_menu_item =\
-            page.get_by_test_id('course-view-delete-menu-item')
+            Button(page, 'course-view-delete-menu-item', 'Delete')
 
     def click_edit(self, index: int):
         """
@@ -27,10 +29,10 @@ class CourseViewMenuComponent(BaseComponent):
 
         :param int index: Индекс карточки в списке курсов
         """
-        self.menu_button.nth(index).click()
+        self.menu_button.click(index)
 
-        expect(self.edit_menu_item.nth(index)).to_be_visible()
-        self.course_edit_menu_item.nth(index).click()
+        self.edit_menu_item.check_visible(index)
+        self.edit_menu_item.click(index)
 
     def click_delete(self, index: int):
         """
@@ -38,7 +40,7 @@ class CourseViewMenuComponent(BaseComponent):
 
         :param int index: Индекс карточки в списке курсов
         """
-        self.menu_button.nth(index).click()
+        self.menu_button.click(index)
 
-        expect(self.delete_menu_item.nth(index)).to_be_visible()
-        self.delete_menu_item.nth(index).click()
+        self.delete_menu_item.check_visible(index)
+        self.delete_menu_item.click(index)

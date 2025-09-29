@@ -1,5 +1,8 @@
 """Модуль компонента CreateCourseFormComponent."""
-from components.base_component import BaseComponent, expect
+from components.base_component import BaseComponent
+
+from elements.input import Input
+from elements.textarea import TextArea
 
 from playwright.sync_api import Page
 
@@ -16,49 +19,48 @@ class CreateCourseFormComponent(BaseComponent):
         super().__init__(page)
 
         self.create_course_title_input =\
-            page.get_by_test_id('create-course-form-title-input')\
-                .locator('input')
+            Input(page, 'create-course-form-title-input', 'Title')
         self.create_course_estimated_time_input =\
-            page.get_by_test_id('create-course-form-estimated-time-input')\
-                .locator('input')
+            Input(page,
+                  'create-course-form-estimated-time-input',
+                  'Estimated time')
         self.create_course_description_textarea =\
-            page.get_by_test_id('create-course-form-description-input')\
-                .locator('textarea').first
+            TextArea(page,
+                     'create-course-form-description-input',
+                     'Description')
         self.create_course_max_score_input =\
-            page.get_by_test_id('create-course-form-max-score-input')\
-                .locator('input')
+            Input(page, 'create-course-form-max-score-input', 'Max score')
         self.create_course_min_score_input =\
-            page.get_by_test_id('create-course-form-min-score-input')\
-                .locator('input')
+            Input(page, 'create-course-form-min-score-input', 'Min score')
 
     def fill(self, title, estimated_time, description, max_score, min_score):
         """
         Метод заполняет форму создания курса.
 
-        :param str title: Ожидаемый заголовок курса
-        :param str estimated_time: Ожидаемое время прохождения
-        :param str description: Ожидаемое описание курса
-        :param str max_score: Ожидаемый максимальный балл
-        :param str min_score: Ожидаемый минимальный балл
+        :param str | None title: Ожидаемый заголовок курса
+        :param str | None estimated_time: Ожидаемое время прохождения
+        :param str | None description: Ожидаемое описание курса
+        :param str | None max_score: Ожидаемый максимальный балл
+        :param str | None min_score: Ожидаемый минимальный балл
         """
         self.create_course_title_input.fill(title)
-        expect(self.create_course_title_input).to_have_value(title)
+        self.create_course_title_input.check_have_value(title)
 
         self.create_course_estimated_time_input.fill(estimated_time)
-        expect(self.create_course_estimated_time_input)\
-            .to_have_value(estimated_time)
+        self.create_course_estimated_time_input\
+            .check_have_value(estimated_time)
 
         self.create_course_description_textarea.fill(description)
-        expect(self.create_course_description_textarea)\
-            .to_have_value(description)
+        self.create_course_description_textarea\
+            .check_have_value(description)
 
         self.create_course_max_score_input.fill(max_score)
-        expect(self.create_course_max_score_input)\
-            .to_have_value(max_score)
+        self.create_course_max_score_input\
+            .check_have_value(max_score)
 
         self.create_course_min_score_input.fill(min_score)
-        expect(self.create_course_min_score_input)\
-            .to_have_value(min_score)
+        self.create_course_min_score_input\
+            .check_have_value(min_score)
 
     def check_visible(self,
                       title,
@@ -69,37 +71,37 @@ class CreateCourseFormComponent(BaseComponent):
         """
         Метод проверяет наличие полей формы и их значения.
 
-        :param str title: Ожидаемый заголовок курса
-        :param str estimated_time: Ожидаемое время прохождения
-        :param str description: Ожидаемое описание курса
-        :param str max_score: Ожидаемый максимальный балл
-        :param str min_score: Ожидаемый минимальный балл
+        :param str | None title: Ожидаемый заголовок курса
+        :param str | None estimated_time: Ожидаемое время прохождения
+        :param str | None description: Ожидаемое описание курса
+        :param str | None max_score: Ожидаемый максимальный балл
+        :param str | None min_score: Ожидаемый минимальный балл
         """
-        expect(self.create_course_title_input).to_be_visible()
-        if title:
+        self.create_course_title_input.check_visible()
+        if title is not None:
             self.create_course_title_input.fill(title)
-            expect(self.create_course_title_input).to_have_value(title)
+            self.create_course_title_input.check_have_value(title)
 
-        expect(self.create_course_estimated_time_input).to_be_visible()
-        if estimated_time:
+        self.create_course_estimated_time_input.check_visible()
+        if estimated_time is not None:
             self.create_course_estimated_time_input.fill(estimated_time)
-            expect(self.create_course_estimated_time_input)\
-                .to_have_value(estimated_time)
+            self.create_course_estimated_time_input\
+                .check_have_value(estimated_time)
 
-        expect(self.create_course_description_textarea).to_be_visible()
-        if description:
+        self.create_course_description_textarea.check_visible()
+        if description is not None:
             self.create_course_description_textarea.fill(description)
-            expect(self.create_course_description_textarea)\
-                .to_have_value(description)
+            self.create_course_description_textarea\
+                .check_have_value(description)
 
-        expect(self.create_course_max_score_input).to_be_visible()
-        if max_score:
+        self.create_course_max_score_input.check_visible()
+        if max_score is not None:
             self.create_course_max_score_input.fill(max_score)
-            expect(self.create_course_max_score_input)\
-                .to_have_value(max_score)
+            self.create_course_max_score_input\
+                .check_have_value(max_score)
 
-        expect(self.create_course_min_score_input).to_be_visible()
-        if min_score:
+        self.create_course_min_score_input.check_visible()
+        if min_score is not None:
             self.create_course_min_score_input.fill(min_score)
-            expect(self.create_course_min_score_input)\
-                .to_have_value(min_score)
+            self.create_course_min_score_input\
+                .check_have_value(min_score)

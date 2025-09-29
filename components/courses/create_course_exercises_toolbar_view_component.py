@@ -1,5 +1,8 @@
 """Модуль компонента CreateCourseExercisesToolbarViewComponent."""
-from components.base_component import BaseComponent, expect
+from components.base_component import BaseComponent
+
+from elements.button import Button
+from elements.text import Text
 
 from playwright.sync_api import Page
 
@@ -16,18 +19,21 @@ class CreateCourseExercisesToolbarViewComponent(BaseComponent):
         super().__init__(page)
 
         self.exercises_title =\
-            page.get_by_test_id('create-course-exercises-box-toolbar-'
-                                'title-text')
+            Text(page,
+                 'create-course-exercises-box-toolbar-title-text',
+                 'Title')
         self.create_exercise_button =\
-            page.get_by_test_id('create-course-exercises-box-toolbar-'
-                                'create-exercise-button')
+            Button(page,
+                   ('create-course-exercises-box-toolbar-'
+                    'create-exercise-button'),
+                   'Create exercise')
 
     def check_visible(self):
         """Метод проверяет корректность отображения панели управления."""
-        expect(self.exercises_title).to_be_visible()
-        expect(self.exercises_title).to_have_text('Exercises')
+        self.exercises_title.check_visible()
+        self.exercises_title.check_have_text('Exercises')
 
-        expect(self.create_exercise_button).to_be_visible()
+        self.create_exercise_button.check_visible()
 
     def click_create_exercise_button(self):
         """Метод имитирует нажатие на кнопку создания задания."""
