@@ -43,10 +43,10 @@ class CoursesListPage(BasePage):
 
         :param int index: Индекс карточки в списке курсов
         """
-        self.course_menu_button.nth(index).click()
+        self.course_view.menu.menu_button.click(index)
 
-        expect(self.course_edit_menu_item.nth(index)).to_be_visible()
-        self.course_edit_menu_item.nth(index).click()
+        self.course_view.menu.edit_menu_item.check_visible(index)
+        self.course_view.menu.edit_menu_item.click(index)
 
     def click_delete_course(self, index: int):
         """

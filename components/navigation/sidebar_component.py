@@ -33,7 +33,7 @@ class SidebarComponent(BaseComponent):
         на элемент выхода из приложения (**Logout**) и проверять,
         что произошел редирект на URL **/#/auth/login**
         """
-        self.logout_list_item.navigate(re.compile(r'*/#/auth/login'))
+        self.logout_list_item.navigate(re.compile(r'.*/#/auth/login'))
 
     def click_courses(self):
         """

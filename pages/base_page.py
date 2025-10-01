@@ -1,5 +1,7 @@
 """Модуль с базовым классом."""
-from playwright.sync_api import Page
+from re import Pattern
+
+from playwright.sync_api import Page, expect
 
 
 class BasePage:
@@ -16,3 +18,7 @@ class BasePage:
     def reload(self):
         """Метод для перезагрузки страницы."""
         self.page.reload(wait_until='domcontentloaded')
+
+    def check_current_url(self, expected_url: Pattern[str]):
+        """Метод для проверки текущего URL."""
+        expect(self.page).to_have_url(expected_url)

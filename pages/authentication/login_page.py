@@ -1,4 +1,6 @@
 """Модуль с классом страницы авторизации."""
+import re
+
 from components.authentication.login_form_component import LoginFormComponent
 
 from elements.button import Button
@@ -11,7 +13,7 @@ from playwright.sync_api import Page
 
 
 class LoginPage(BasePage):
-    """Класс POM страница авторизации."""
+    """Класс POM страницы авторизации."""
 
     def __init__(self, page: Page):
         """Конструктор класса, принимающий объект Page."""
@@ -35,6 +37,7 @@ class LoginPage(BasePage):
         """Метод для нажатия на ссылку 'Registration'."""
         self.registration_link.check_visible()
         self.registration_link.click()
+        self.check_current_url(re.compile('.*/#/auth/registration'))
 
     def check_visible_wrong_email_or_password_alert(self):
         """Метод для проверки отображения алерта с ошибкой."""
