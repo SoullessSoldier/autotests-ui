@@ -2,3 +2,8 @@
 /**/.pytest_cache
 .idea
 .vscode
+
+#Allure stuff
+allure-distr
+allure-results
+allure-report
