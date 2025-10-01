@@ -38,5 +38,6 @@
   - [branch_07_04 - Модуль 7.4 "Практикуемся в реализации PageComponent"](./branch_07_04/readme.md)
   - [branch_07_05 - Модуль 7.5 "Знакомство с PageFactory"](./branch_07_05/readme.md)
   - [branch_07_06 - Модуль 7.6 "Практические применение PageFactory в автотестах"](./branch_07_06/readme.md)
+  - [branch_07_07 - Модуль 7.7 "Наращивание тестовой базы и рефакторинг"](./branch_07_07/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
