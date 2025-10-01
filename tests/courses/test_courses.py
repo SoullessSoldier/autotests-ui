@@ -161,5 +161,7 @@ class TestCourses:
         # Проверка, что в карточке сохранены новые данные
         new_params['index'] = TEST_COURSE_INDEX
         new_params.pop('description', None)
+        courses_list_page.visit('https://nikita-filonov.github.io/'
+                                'qa-automation-engineer-ui-course/#/courses')
         courses_list_page.toolbar_view.check_visible()
         courses_list_page.course_view.check_visible(**new_params)
