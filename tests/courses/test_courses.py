@@ -94,30 +94,6 @@ class TestCourses:
             create_course_page: CreateCoursePage
     ):
         """Метод проверяет корректность функц-ла изменения карточки курса."""
-        # Подготовка тестовых данных
-        TEST_COURSE_INDEX = 0
-        # Тестовые данные - исходные
-        # params - данные для проверки карточки на странице списка курсов
-        params = CheckVisibleCourseCardParams(
-            index=TEST_COURSE_INDEX,
-            title='Playwright',
-            max_score='100',
-            min_score='10',
-            estimated_time='2 weeks'
-        )
-        # params_dict - данные для заполнения формы курса
-        params_dict = asdict(params)
-        params_dict.pop('index', None)
-        params_dict['description'] = 'Playwright'
-        # Тестовые данные - новые данные для изменения формы курса
-        new_params = {
-            'title': 'Playwright ABC',
-            'max_score': '100123',
-            'min_score': '10321',
-            'estimated_time': '2456 weeks',
-            'description': 'Playwright new description'
-            }
-
         create_course_page.visit('https://nikita-filonov.github.io/'
                                  'qa-automation-engineer-ui-course/#/'
                                  'courses/create')
@@ -145,23 +121,43 @@ class TestCourses:
             is_image_uploaded=True
         )
 
-        create_course_page.create_course_form.fill(**params_dict)
+        create_course_page.create_course_form.fill(
+            title='Playwright',
+            estimated_time='2 weeks',
+            description='Playwright',
+            max_score='100',
+            min_score='10'
+        )
         create_course_page.create_course_toolbar.click_create_course_button()
 
         # Проверка, что в карточке сохранены исходные данные
         courses_list_page.toolbar_view.check_visible()
-        courses_list_page.course_view.check_visible(**asdict(params))
+        courses_list_page.course_view.check_visible(
+            index=0,
+            title='Playwright',
+            estimated_time='2 weeks',
+            max_score='100',
+            min_score='10'
+        )
 
         # Изменение карточки курса
-        courses_list_page.click_edit_course(TEST_COURSE_INDEX)
-        create_course_page.create_course_form.check_visible(**params_dict)
-        create_course_page.create_course_form.fill(**new_params)
+        courses_list_page.course_view.menu.click_edit(index=0)
+
+        create_course_page.create_course_form.fill(
+            title='New Playwright',
+            estimated_time='3 weeks',
+            description='New Playwright',
+            max_score='1000',
+            min_score='100'
+        )
         create_course_page.create_course_toolbar.click_create_course_button()
 
         # Проверка, что в карточке сохранены новые данные
-        new_params['index'] = TEST_COURSE_INDEX
-        new_params.pop('description', None)
-        courses_list_page.visit('https://nikita-filonov.github.io/'
-                                'qa-automation-engineer-ui-course/#/courses')
         courses_list_page.toolbar_view.check_visible()
-        courses_list_page.course_view.check_visible(**new_params)
+        courses_list_page.course_view.check_visible(
+            index=0,
+            title='New Playwright',
+            estimated_time='3 weeks',
+            max_score='1000',
+            min_score='100'
+        )
