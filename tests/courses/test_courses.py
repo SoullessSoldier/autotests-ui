@@ -1,18 +1,36 @@
 """Модуль автотеста."""
 from dataclasses import asdict
 
+import allure
+
+from allure_commons.types import Severity
+
 from pages.courses.courses_list_page import (CheckVisibleCourseCardParams,
                                              CoursesListPage)
 from pages.courses.create_course_page import CreateCoursePage
 
 import pytest
 
+from tools.allure.epics import AllureEpic
+from tools.allure.features import AllureFeature
+from tools.allure.stories import AllureStory
+from tools.allure.tags import AllureTag
+
 
 @pytest.mark.courses
 @pytest.mark.regression
+@allure.tag(AllureTag.COURSES, AllureTag.REGRESSION)
+@allure.epic(AllureEpic.LMS)
+@allure.feature(AllureFeature.COURSES)
+@allure.story(AllureStory.COURSES)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.suite(AllureFeature.COURSES)
+@allure.sub_suite(AllureStory.COURSES)
 class TestCourses:
     """Класс тестов курсов."""
 
+    @allure.title('Check displaying of empty courses list')
+    @allure.severity(Severity.NORMAL)
     def test_empty_courses_list(self, courses_list_page: CoursesListPage):
         """
         Функция проверки.
@@ -35,6 +53,8 @@ class TestCourses:
                              'will be displayed here')
                              )
 
+    @allure.title('Create course')
+    @allure.severity(Severity.CRITICAL)
     def test_create_course(self, courses_list_page: CoursesListPage,
                            create_course_page: CreateCoursePage):
         """
@@ -88,6 +108,8 @@ class TestCourses:
             )
         courses_list_page.course_view.check_visible(**asdict(params))
 
+    @allure.title('Edit course')
+    @allure.severity(Severity.CRITICAL)
     def test_edit_course(
             self,
             courses_list_page: CoursesListPage,
