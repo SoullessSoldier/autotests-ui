@@ -1,6 +1,8 @@
 """Модуль с классом компонента SidebarComponent."""
 import re
 
+import allure
+
 from components.base_component import BaseComponent
 from components.navigation.sidebar_list_item_component\
     import SidebarListItemComponent
@@ -19,12 +21,14 @@ class SidebarComponent(BaseComponent):
         self.courses_list_item = SidebarListItemComponent(page, 'courses')
         self.dashboard_list_item = SidebarListItemComponent(page, 'dashboard')
 
+    @allure.step('Check visible sidebar')
     def check_visible(self):
         """Метод проверяет корректное отображение компонента Sidebar."""
         self.logout_list_item.check_visible('Logout')
         self.courses_list_item.check_visible('Courses')
         self.dashboard_list_item.check_visible('Dashboard')
 
+    @allure.step('Click logout on sidebar')
     def click_logout(self):
         """
         Метод клика на Logout.
@@ -35,6 +39,7 @@ class SidebarComponent(BaseComponent):
         """
         self.logout_list_item.navigate(re.compile(r'.*/#/auth/login'))
 
+    @allure.step('Click courses on sidebar')
     def click_courses(self):
         """
         Метод клика на Courses.
@@ -45,6 +50,7 @@ class SidebarComponent(BaseComponent):
         """
         self.logout_list_item.navigate(re.compile(r'*/#/courses'))
 
+    @allure.step('Click dashboard on sidebar')
     def click_dashboard(self):
         """
         Метод клика на Dashboard.

@@ -1,4 +1,6 @@
 """Модуль с классом компонента Navbar."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.text import Text
@@ -18,6 +20,7 @@ class NavbarComponent(BaseComponent):
         self.welcome_title =\
             Text(page, 'navigation-navbar-welcome-title-text', 'Welcome Title')
 
+    @allure.step('Check visible navbar')
     def check_visible(self, username: str):
         """Метод для проверки корректного отображения компонента Navbar."""
         self.app_title.check_visible()

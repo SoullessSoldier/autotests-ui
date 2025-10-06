@@ -1,4 +1,6 @@
 """Модуль компонента CourseViewMenuComponent."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.button import Button
@@ -23,6 +25,7 @@ class CourseViewMenuComponent(BaseComponent):
         self.delete_menu_item =\
             Button(page, 'course-view-delete-menu-item', 'Delete')
 
+    @allure.step('Open course menu at index {index} and click edit')
     def click_edit(self, index: int):
         """
         Метод для нажатия на кнопку редактирования карточки курса.
@@ -34,6 +37,7 @@ class CourseViewMenuComponent(BaseComponent):
         self.edit_menu_item.check_visible(index)
         self.edit_menu_item.click(index)
 
+    @allure.step('Open course menu at index {index} and click delete')
     def click_delete(self, index: int):
         """
         Метод для нажатия на кнопку удаления карточки курса.

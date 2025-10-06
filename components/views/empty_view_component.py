@@ -1,4 +1,6 @@
 """Модуль компонента EmptyViewComponent."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.icon import Icon
@@ -26,6 +28,10 @@ class EmptyViewComponent(BaseComponent):
             Text(page, f'{identifier}-empty-view-description-text',
                  'Description')
 
+    @allure.step(
+            'Check visible EmptyView with parameters: '
+            '"title"={title}, "description"={description}'
+            )
     def check_visible(self, title: str, description: str):
         """
         Метод проверяет,что компонент отображается корректно на странице.

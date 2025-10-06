@@ -42,5 +42,6 @@
 - **8. Создание Allure отчета**
   - [branch_08_01 - Модуль 8.1 "Знакомство с Allure"](./branch_08_01/readme.md)
   - [branch_08_02 - Модуль 8.2 "Интеграция Allure в автотесты"](./branch_08_02/readme.md)
+  - [branch_08_03 - Модуль 8.3 "Добавление Allure шагов в автотесты"](./branch_08_03/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)

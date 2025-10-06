@@ -1,4 +1,6 @@
 """Модуль компонента RegistrationFormComponent."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.input import Input
@@ -23,6 +25,9 @@ class RegistrationFormComponent(BaseComponent):
         self.password_input = Input(page, 'registration-form-password-input',
                                     'Password')
 
+    @allure.step('Fill registration form with parameters: '
+                 '"email"={email}, "username"={username}, '
+                 '"password"={password}')
     def fill(self, email: str, username: str, password: str):
         """
         Метод для заполнения формы авторизации.
@@ -40,6 +45,7 @@ class RegistrationFormComponent(BaseComponent):
         self.password_input.fill(password)
         self.password_input.check_have_value(password)
 
+    @allure.step('Check visible registration form')
     def check_visible(self,
                       email: str | None = None,
                       username: str | None = None,

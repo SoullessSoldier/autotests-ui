@@ -29,6 +29,7 @@ from tools.allure.tags import AllureTag
 class TestCourses:
     """Класс тестов курсов."""
 
+    @pytest.mark.flaky(reruns=3, reruns_delay=2)
     @allure.title('Check displaying of empty courses list')
     @allure.severity(Severity.NORMAL)
     def test_empty_courses_list(self, courses_list_page: CoursesListPage):

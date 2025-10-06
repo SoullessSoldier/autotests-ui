@@ -1,4 +1,6 @@
 """Модуль компонента CourseViewComponent."""
+import allure
+
 from components.base_component import BaseComponent
 from components.courses.\
     course_view_menu_component import CourseViewMenuComponent
@@ -32,6 +34,7 @@ class CourseViewComponent(BaseComponent):
                  'course-estimated-time-info-row-view-text',
                  'Estimated time')
 
+    @allure.step('Check visible course view at index "{index}"')
     def check_visible(
             self,
             index: int,

@@ -1,4 +1,6 @@
 """Модуль компонента CreateCourseFormComponent."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.input import Input
@@ -33,6 +35,11 @@ class CreateCourseFormComponent(BaseComponent):
         self.create_course_min_score_input =\
             Input(page, 'create-course-form-min-score-input', 'Min score')
 
+    @allure.step(
+            'Fill create course form with parameters: '
+            '"title"={title}, "estimated_time"={estimated_time}, '
+            '"description"={description}, "max_score"={max_score}, '
+            '"min_score"={min_score}')
     def fill(self, title, estimated_time, description, max_score, min_score):
         """
         Метод заполняет форму создания курса.
@@ -62,6 +69,12 @@ class CreateCourseFormComponent(BaseComponent):
         self.create_course_min_score_input\
             .check_have_value(min_score)
 
+    @allure.step(
+            'Check visible create course form with parameters: '
+            '"title"={title}, "estimated_time"={estimated_time}, '
+            '"description"={description}, "max_score"={max_score}, '
+            '"min_score"={min_score}'
+            )
     def check_visible(self,
                       title,
                       estimated_time,

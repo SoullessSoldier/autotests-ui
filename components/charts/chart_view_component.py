@@ -1,4 +1,6 @@
 """Модуль с классом компонента ChartViewComponent."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.image import Image
@@ -28,6 +30,7 @@ class ChartViewComponent(BaseComponent):
         self.chart =\
             Image(page, f'{identifier}-{chart_type}-chart', 'Image')
 
+    @allure.step('Check visible chart view "{title}"')
     def check_visible(self, title: str):
         """Метод проверяет,что компонент отображается корректно на странице."""
         self.title.check_visible()

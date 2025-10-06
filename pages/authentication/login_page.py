@@ -1,6 +1,8 @@
 """Модуль с классом страницы авторизации."""
 import re
 
+import allure
+
 from components.authentication.login_form_component import LoginFormComponent
 
 from elements.button import Button
@@ -39,6 +41,7 @@ class LoginPage(BasePage):
         self.registration_link.click()
         self.check_current_url(re.compile('.*/#/auth/registration'))
 
+    @allure.step('Check visible wrong email or password alert')
     def check_visible_wrong_email_or_password_alert(self):
         """Метод для проверки отображения алерта с ошибкой."""
         self.wrong_email_or_password_alert.check_visible()

@@ -1,4 +1,6 @@
 """Модуль компонента ImageUploadWidgetComponent."""
+import allure
+
 from components.base_component import BaseComponent
 from components.views.empty_view_component import EmptyViewComponent
 
@@ -56,6 +58,7 @@ class ImageUploadWidgetComponent(BaseComponent):
                       f'{identifier}-image-upload-widget-input',
                       'File input')
 
+    @allure.step('Check visible ImageUploadWidget')
     def check_visible(
             self,
             is_image_uploaded: bool = False

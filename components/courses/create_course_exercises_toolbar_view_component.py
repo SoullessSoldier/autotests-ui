@@ -1,4 +1,6 @@
 """Модуль компонента CreateCourseExercisesToolbarViewComponent."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.button import Button
@@ -28,6 +30,7 @@ class CreateCourseExercisesToolbarViewComponent(BaseComponent):
                     'create-exercise-button'),
                    'Create exercise')
 
+    @allure.step('Check visible create course exercises toolbar')
     def check_visible(self):
         """Метод проверяет корректность отображения панели управления."""
         self.exercises_title.check_visible()

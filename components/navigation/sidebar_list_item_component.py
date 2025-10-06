@@ -1,6 +1,8 @@
 """Модуль с классом компонента SidebarListItemComponent."""
 from typing import Pattern
 
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.button import Button
@@ -33,6 +35,7 @@ class SidebarListItemComponent(BaseComponent):
             Button(page, f'{identifier}-drawer-list-item-button',
                    'Button')
 
+    @allure.step('Check visible "{title}" sidebar list item')
     def check_visible(self, title: str):
         """Метод проверяет,что компонент отображается корректно на странице."""
         self.icon.check_visible()

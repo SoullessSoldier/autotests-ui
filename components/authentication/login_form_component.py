@@ -1,4 +1,6 @@
 """Модуль компонента LoginFormComponent."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.input import Input
@@ -21,6 +23,8 @@ class LoginFormComponent(BaseComponent):
         self.password_input =\
             Input(page, 'login-form-password-input', 'Password')
 
+    @allure.step('Fill login form with parameters: '
+                 '"email"={email}, "password"={password}')
     def fill(self, email: str, password: str):
         """
         Метод для заполнения формы авторизации.
@@ -34,6 +38,10 @@ class LoginFormComponent(BaseComponent):
         self.password_input.fill(password)
         self.password_input.check_have_value(password)
 
+    @allure.step(
+            'Check visible login form with parameters: '
+            '"email"={email}, "password"={password}'
+            )
     def check_visible(self,
                       email: str | None = None,
                       password: str | None = None

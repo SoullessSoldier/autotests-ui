@@ -1,6 +1,8 @@
 """Модуль компонента CourseViewComponent."""
 import re
 
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.button import Button
@@ -25,6 +27,7 @@ class CoursesListToolbarViewComponent(BaseComponent):
                    'courses-list-toolbar-create-course-button',
                    'Create course')
 
+    @allure.step('Check visible courses list toolbar')
     def check_visible(self):
         """Метод для проверки видимости блока панели 'Courses'."""
         self.title.check_visible()

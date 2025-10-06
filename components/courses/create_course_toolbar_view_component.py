@@ -1,4 +1,6 @@
 """Модуль компонента CreateCourseToolbarViewComponent."""
+import allure
+
 from components.base_component import BaseComponent
 
 from elements.button import Button
@@ -25,6 +27,11 @@ class CreateCourseToolbarViewComponent(BaseComponent):
                    'create-course-toolbar-create-course-button',
                    'Create course')
 
+    @allure.step(
+            'Check create course toolbar with '
+            'button "create_course_disabled" '
+            'state="{is_create_course_disabled}"'
+    )
     def check_visible(self, is_create_course_disabled: bool = True):
         """
         Метод проверяет корректность отображения панели управления.
