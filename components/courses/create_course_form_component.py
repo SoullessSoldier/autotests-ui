@@ -35,12 +35,14 @@ class CreateCourseFormComponent(BaseComponent):
         self.create_course_min_score_input =\
             Input(page, 'create-course-form-min-score-input', 'Min score')
 
-    @allure.step(
-            'Fill create course form with parameters: '
-            '"title"={title}, "estimated_time"={estimated_time}, '
-            '"description"={description}, "max_score"={max_score}, '
-            '"min_score"={min_score}')
-    def fill(self, title, estimated_time, description, max_score, min_score):
+    @allure.step('Fill create course form')
+    def fill(self,
+             title: str | None,
+             estimated_time: str | None,
+             description: str | None,
+             max_score: str | None,
+             min_score: str | None
+    ):
         """
         Метод заполняет форму создания курса.
 
@@ -69,18 +71,13 @@ class CreateCourseFormComponent(BaseComponent):
         self.create_course_min_score_input\
             .check_have_value(min_score)
 
-    @allure.step(
-            'Check visible create course form with parameters: '
-            '"title"={title}, "estimated_time"={estimated_time}, '
-            '"description"={description}, "max_score"={max_score}, '
-            '"min_score"={min_score}'
-            )
+    @allure.step('Check visible create course')
     def check_visible(self,
-                      title,
-                      estimated_time,
-                      description,
-                      max_score,
-                      min_score):
+                      title: str | None,
+                      estimated_time: str | None,
+                      description: str | None,
+                      max_score: str | None,
+                      min_score: str | None):
         """
         Метод проверяет наличие полей формы и их значения.
 
