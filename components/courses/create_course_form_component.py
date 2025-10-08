@@ -42,7 +42,7 @@ class CreateCourseFormComponent(BaseComponent):
              description: str | None,
              max_score: str | None,
              min_score: str | None
-    ):
+             ):
         """
         Метод заполняет форму создания курса.
 
