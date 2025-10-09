@@ -44,5 +44,6 @@
   - [branch_08_02 - Модуль 8.2 "Интеграция Allure в автотесты"](./branch_08_02/readme.md)
   - [branch_08_03 - Модуль 8.3 "Добавление Allure шагов в автотесты"](./branch_08_03/readme.md)
   - [branch_08_04 - Модуль 8.4 "Добавление Playwright Trace Viewer в Allure отчет"](./branch_08_04/readme.md)
+  - [branch_08_05 - Модуль 8.5 "Добавление видео в Allure отчет"](./branch_08_05/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
