@@ -10,3 +10,6 @@ flake8-quotes
 flake8-builtins
 flake8-docstrings
 isort
+pydantic
+pydantic[email]
+pydantic-settings

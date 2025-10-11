@@ -56,5 +56,15 @@ EXPOSE 22
 # Make sure /run/sshd exists
 RUN mkdir -p /run/sshd && chown root:root /run/sshd && chmod 755 /run/sshd
 
+# Install JRE
+RUN apt install default-jre -y
+
+# Install allure from archive
+WORKDIR /home/vscode/workspace
+RUN mkdir /home/vscode/allure
+COPY ./allure-distr/allure-2.35.1.tgz ../allure-2.35.1.tgz
+RUN tar -xvzf ../allure-2.35.1.tgz -C ../allure
+RUN echo export PATH=$PATH:/home/vscode/allure/allure-2.35.1/bin >>/home/${USERNAME}/.bashrc
+
 # Default entry point
 CMD ["/usr/sbin/sshd", "-D"]
