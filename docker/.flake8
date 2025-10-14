@@ -8,4 +8,5 @@ exclude =
     build/,
     dist/,
     .local/
+ignore = A003
 per-file-ignores = __init__.py:D104

@@ -46,5 +46,7 @@
   - [branch_08_04 - Модуль 8.4 "Добавление Playwright Trace Viewer в Allure отчет"](./branch_08_04/readme.md)
   - [branch_08_05 - Модуль 8.5 "Добавление видео в Allure отчет"](./branch_08_05/readme.md)
   - [branch_08_06 - Модуль 8.6 "Знакомство с Allure TestOPS"](./branch_08_06/readme.md)
+- **9. Улучшение автотестов**
+  - [branch_09_01 - Модуль 9.1 "Настройки автотестов с Pydantic"](./branch_09_01/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
