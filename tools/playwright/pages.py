@@ -3,7 +3,7 @@ from collections.abc import Generator
 
 import allure
 
-from config import settings
+from config import Browser, settings
 
 from playwright.sync_api import Page, Playwright
 
@@ -11,10 +11,11 @@ from playwright.sync_api import Page, Playwright
 def initialize_playwright_page(
         playwright: Playwright,
         test_name: str,
+        browser_type: Browser,
         storage_state: str | None = None,
 ) -> Generator[Page, None, None]:
     """Функция возвращает объект Page с контекстом, трейсингом и видео."""
-    browser = playwright.chromium.launch(headless=settings.headless)
+    browser = playwright[browser_type].launch(headless=settings.headless)
     context = browser.new_context(
         base_url=settings.get_base_url(),
         storage_state=storage_state,

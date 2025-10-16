@@ -48,5 +48,6 @@
   - [branch_08_06 - Модуль 8.6 "Знакомство с Allure TestOPS"](./branch_08_06/readme.md)
 - **9. Улучшение автотестов**
   - [branch_09_01 - Модуль 9.1 "Настройки автотестов с Pydantic"](./branch_09_01/readme.md)
+  - [branch_09_02 - Модуль 9.2 "Запуск автотестов на разных браузерах"](./branch_09_02/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)

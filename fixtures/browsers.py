@@ -37,7 +37,7 @@ def initialize_browser_state(playwright: Playwright):
     browser.close()
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(params=settings.browsers)
 def chromium_page_with_state(
         initialize_browser_state,
         playwright: Playwright,
@@ -46,16 +46,18 @@ def chromium_page_with_state(
     yield from initialize_playwright_page(
         playwright,
         storage_state=settings.browser_state_file,
-        test_name=request.node.name
+        test_name=request.node.name,
+        browser_type=request.param
     )
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(params=settings.browsers)
 def chromium_page(
         playwright: Playwright,
         request: SubRequest) -> Generator[Page, None, None]:
     """Функция возвращает инстанс страницы Page."""
     yield from initialize_playwright_page(
         playwright,
-        test_name=request.node.name
+        test_name=request.node.name,
+        browser_type=request.param
     )
