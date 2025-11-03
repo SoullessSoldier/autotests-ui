@@ -1,9 +1,15 @@
 """Модуль элемента текстового поля TextArea."""
 from typing import override
 
+import allure
+
 from elements.base_element import BaseElement
 
 from playwright.sync_api import Locator, expect
+
+from tools.logger import get_logger
+
+logger = get_logger('TEXTAREA')
 
 
 class TextArea(BaseElement):
@@ -29,8 +35,11 @@ class TextArea(BaseElement):
         :param kwargs:
         Дополнительные именованные аргументы для локализации элемента.
         """
-        locator = self.get_locator(nth, **kwargs)
-        locator.fill(value)
+        step = f'Fill {self.type_of} "{self.name}" to value "{value}"'
+        with allure.step(step):
+            locator = self.get_locator(nth, **kwargs)
+            logger.info(step)
+            locator.fill(value)
 
     def check_have_value(self, value: str, nth: int = 0, **kwargs):
         """
@@ -41,5 +50,9 @@ class TextArea(BaseElement):
         :param kwargs:
         Дополнительные именованные аргументы для локализации элемента.
         """
-        locator = self.get_locator(nth, **kwargs)
-        expect(locator).to_have_value(value)
+        step =\
+            f'Checking that {self.type_of} "{self.name}" has a value "{value}"'
+        with allure.step(step):
+            locator = self.get_locator(nth, **kwargs)
+            logger.info(step)
+            expect(locator).to_have_value(value)

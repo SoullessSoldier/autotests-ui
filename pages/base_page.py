@@ -5,6 +5,10 @@ import allure
 
 from playwright.sync_api import Page, expect
 
+from tools.logger import get_logger
+
+logger = get_logger('BASE_PAGE')
+
 
 class BasePage:
     """Базовый класс для POM."""
@@ -15,18 +19,22 @@ class BasePage:
 
     def visit(self, url: str):
         """Метод для открытия ссылок."""
-        with allure.step(f'Opening the url "{url}"'):
+        step = f'Opening the url "{url}"'
+        with allure.step(step):
+            logger.info(step)
             self.page.goto(url, wait_until='networkidle')
 
     def reload(self):
         """Метод для перезагрузки страницы."""
-        with allure.step(f'Reloading page with url "{self.page.url}"'):
+        step = f'Reloading page with url "{self.page.url}"'
+        with allure.step(step):
+            logger.info(step)
             self.page.reload(wait_until='domcontentloaded')
 
     def check_current_url(self, expected_url: Pattern[str]):
         """Метод для проверки текущего URL."""
-        with allure.step(
-            'Checking that current url matches pattern '
-            f'"{expected_url.pattern}"'
-        ):
+        step = ('Checking that current url matches pattern '
+                f'"{expected_url.pattern}"')
+        with allure.step(step):
+            logger.info(step)
             expect(self.page).to_have_url(expected_url)

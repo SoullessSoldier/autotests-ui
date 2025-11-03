@@ -7,6 +7,10 @@ from elements.base_element import BaseElement
 
 from playwright.sync_api import Locator, expect
 
+from tools.logger import get_logger
+
+logger = get_logger('INPUT')
+
 
 class Input(BaseElement):
     """Класс элемента поля ввода Input."""
@@ -36,10 +40,10 @@ class Input(BaseElement):
         :param kwargs:
         Дополнительные именованные аргументы для локализации элемента.
         """
-        with allure.step(
-            f'Fill {self.type_of} "{self.name}" to value "{value}"'
-        ):
+        step = f'Fill {self.type_of} "{self.name}" to value "{value}"'
+        with allure.step(step):
             locator = self.get_locator(nth, **kwargs)
+            logger.info(step)
             locator.fill(value)
 
     def check_have_value(self, value: str, nth: str = 0, **kwargs):
@@ -51,8 +55,9 @@ class Input(BaseElement):
         :param kwargs:
         Дополнительные именованные аргументы для локализации элемента.
         """
-        with allure.step(
+        step =\
             f'Checking that {self.type_of} "{self.name}" has a value "{value}"'
-        ):
+        with allure.step(step):
             locator = self.get_locator(nth, **kwargs)
+            logger.info(step)
             expect(locator).to_have_value(value)
