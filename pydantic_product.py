@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 class Market(BaseModel):
     """Класс рынков."""
 
-    id: int
+    market_id: int
     name: str
 
 
