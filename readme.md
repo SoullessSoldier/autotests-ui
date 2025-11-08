@@ -55,5 +55,6 @@
   - [branch_09_06 - Модуль 9.6 "Добавляем информацию о переменных окружения в Allure отчет"](./branch_09_06/readme.md)
 - **10. Работа с CI/CD**
   - [branch_10_01 - Модуль 10.1 "Введение в CI/CD"](./branch_10_01/readme.md)
+  - [branch_10_02 - Модуль 10.2 "CI/CD системы"](./branch_10_02/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
