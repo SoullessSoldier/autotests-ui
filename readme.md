@@ -56,6 +56,7 @@
 - **10. Работа с CI/CD**
   - [branch_10_01 - Модуль 10.1 "Введение в CI/CD"](./branch_10_01/readme.md)
   - [branch_10_02 - Модуль 10.2 "CI/CD системы"](./branch_10_02/readme.md)
-  - [branch_10_03 - Модуль 10.3 ""Подготовка проекта к запуску на CI"](./branch_10_03/readme.md)
+  - [branch_10_03 - Модуль 10.3 "Подготовка проекта к запуску на CI"](./branch_10_03/readme.md)
+  - [branch_10_04 - Модуль 10.4 "Запуск автотестов на CI"](./branch_10_04/readme.md)
 - **Служебное**
   - [docker - Описание изолированной среды в Docker для работы с Playwright](./docker/readme.md)
