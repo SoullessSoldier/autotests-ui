@@ -1,0 +1,61 @@
+INFO     BASE_PAGE:base_page.py:24 Opening the url "AppRoute.DASHBOARD"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=navigation-navbar-app-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "App title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=navigation-navbar-app-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "App title" have text "UI Course"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=navigation-navbar-welcome-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Welcome Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=navigation-navbar-welcome-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Welcome Title" have text "Welcome, username!"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=logout-drawer-list-item-icon" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that icon "Icon" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=logout-drawer-list-item-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=logout-drawer-list-item-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Title" have text "Logout"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=logout-drawer-list-item-button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that button "Button" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=courses-drawer-list-item-icon" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that icon "Icon" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=courses-drawer-list-item-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=courses-drawer-list-item-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Title" have text "Courses"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=courses-drawer-list-item-button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that button "Button" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=dashboard-drawer-list-item-icon" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that icon "Icon" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=dashboard-drawer-list-item-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=dashboard-drawer-list-item-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Title" have text "Dashboard"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=dashboard-drawer-list-item-button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that button "Button" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=dashboard-toolbar-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=dashboard-toolbar-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Title" have text "Dashboard"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=scores-widget-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=scores-widget-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Title" have text "Scores"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=scores-scatter-chart" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that image "Image" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=courses-widget-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=courses-widget-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Title" have text "Courses"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=courses-pie-chart" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that image "Image" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=students-widget-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=students-widget-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Title" have text "Students"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=students-bar-chart" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that image "Image" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=activities-widget-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that text "Title" is visible
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=activities-widget-title-text" at index "0"
+INFO     BASE_ELEMENT:base_element.py:88 Checking that text "Title" have text "Activities"
+INFO     BASE_ELEMENT:base_element.py:45 Getting locator with "data-test-id=activities-line-chart" at index "0"
+INFO     BASE_ELEMENT:base_element.py:73 Checking that image "Image" is visible

@@ -1,0 +1,39 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+        Функция проверки.
+
+        Проверка того, что у свежезарегистрированного пользователя
+        нет доступных курсов.
+        ","1455","Check displaying of empty courses list","LMS System","Sun Nov 09 19:24:21 UTC 2025","passed","Sun Nov 09 19:24:22 UTC 2025","Courses","Courses","",""
+"Функция автотеста регистрации в приложении.","1929","Registration with correct email, username and password","LMS System","Sun Nov 09 19:24:15 UTC 2025","passed","Sun Nov 09 19:24:17 UTC 2025","Registration","Authentication","",""
+"Метод проверяет корректность функц-ла изменения карточки курса.","4936","Edit course","LMS System","Sun Nov 09 19:24:27 UTC 2025","passed","Sun Nov 09 19:24:32 UTC 2025","Courses","Courses","",""
+"Функция автотеста авторизации в приложении.","1794","User login with wrong email or password","LMS System","Sun Nov 09 19:24:10 UTC 2025","passed","Sun Nov 09 19:24:12 UTC 2025","Authorization","Authentication","",""
+"Функция проверки страницы Dashboard.","2021","Check displaying of dashboard page","LMS System","Sun Nov 09 19:24:29 UTC 2025","passed","Sun Nov 09 19:24:31 UTC 2025","Dashboard","Dashboard","",""
+"
+        Функция проверки.
+
+        Проверка создания курса и отображения его в списке курсов.
+        ","3346","Create course","LMS System","Sun Nov 09 19:24:23 UTC 2025","passed","Sun Nov 09 19:24:27 UTC 2025","Courses","Courses","",""
+"Функция автотеста авторизации в приложении.","2237","User login with wrong email or password","LMS System","Sun Nov 09 19:24:05 UTC 2025","passed","Sun Nov 09 19:24:07 UTC 2025","Authorization","Authentication","",""
+"
+        Функция проверки.
+
+        Проверка того, что у свежезарегистрированного пользователя
+        нет доступных курсов.
+        ","1291","Check displaying of empty courses list","LMS System","Sun Nov 09 19:24:19 UTC 2025","passed","Sun Nov 09 19:24:20 UTC 2025","Courses","Courses","",""
+"Функция автотеста авторизации в приложении.","1625","User login with wrong email or password","LMS System","Sun Nov 09 19:24:08 UTC 2025","passed","Sun Nov 09 19:24:09 UTC 2025","Authorization","Authentication","",""
+"Метод проверяет корректность функц-ла изменения карточки курса.","3846","Edit course","LMS System","Sun Nov 09 19:24:24 UTC 2025","passed","Sun Nov 09 19:24:28 UTC 2025","Courses","Courses","",""
+"Функция автотеста авторизации в приложении.","1250","User login with wrong email or password","LMS System","Sun Nov 09 19:23:59 UTC 2025","passed","Sun Nov 09 19:24:00 UTC 2025","Authorization","Authentication","",""
+"
+        Функция проверки.
+
+        Проверка создания курса и отображения его в списке курсов.
+        ","2735","Create course","LMS System","Sun Nov 09 19:24:21 UTC 2025","passed","Sun Nov 09 19:24:23 UTC 2025","Courses","Courses","",""
+"Функция проверки страницы Dashboard.","2070","Check displaying of dashboard page","LMS System","Sun Nov 09 19:24:33 UTC 2025","passed","Sun Nov 09 19:24:35 UTC 2025","Dashboard","Dashboard","",""
+"Функция автотеста регистрации в приложении.","2089","Registration with correct email, username and password","LMS System","Sun Nov 09 19:24:16 UTC 2025","passed","Sun Nov 09 19:24:19 UTC 2025","Registration","Authentication","",""
+"Метод проверяет навигацию со страницы авторизации на регистрацию.","1581","Navigation from login page to registration page","LMS System","Sun Nov 09 19:24:12 UTC 2025","passed","Sun Nov 09 19:24:14 UTC 2025","Authorization","Authentication","",""
+"Функция автотеста авторизации в приложении.","1664","User login with wrong email or password","LMS System","Sun Nov 09 19:23:57 UTC 2025","passed","Sun Nov 09 19:23:59 UTC 2025","Authorization","Authentication","",""
+"Метод проверяет успешную авторизацию в приложении.","6628","User login with correct email and password","LMS System","Sun Nov 09 19:24:05 UTC 2025","passed","Sun Nov 09 19:24:11 UTC 2025","Authorization","Authentication","",""
+"Метод проверяет навигацию со страницы авторизации на регистрацию.","1818","Navigation from login page to registration page","LMS System","Sun Nov 09 19:24:14 UTC 2025","passed","Sun Nov 09 19:24:16 UTC 2025","Authorization","Authentication","",""
+"Метод проверяет успешную авторизацию в приложении.","3136","User login with correct email and password","LMS System","Sun Nov 09 19:24:12 UTC 2025","passed","Sun Nov 09 19:24:15 UTC 2025","Authorization","Authentication","",""
+"Функция автотеста авторизации в приложении.","1711","User login with wrong email or password","LMS System","Sun Nov 09 19:23:57 UTC 2025","passed","Sun Nov 09 19:23:59 UTC 2025","Authorization","Authentication","",""
